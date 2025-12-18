@@ -55,7 +55,7 @@ const userId = user._id;
     <div className="feedback-container">
       <Header />
 
-      <h2 className="title">We Value Your Feedback</h2>
+      <h2 className="desc-title">We Value Your Feedback</h2>
 
       <form className="feedback-form" onSubmit={handleSubmit}>
         <div className="rating-box">

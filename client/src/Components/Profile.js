@@ -10,12 +10,17 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { userSchemaValidation } from "../Validations/UserValidations";
 import { FaArrowLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import User from "../Components/User";
+
 
 const Profile = () => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.users);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const [country,setCountry] = useState(null)
+  const [region,setRegion] = useState(null)
+
 
   const {
     register,
@@ -67,7 +72,7 @@ const Profile = () => {
     setLoading(true);
     try {
       const response = await axios.put(
-        `${process.env.REACT_APP_SERVER_URL}/updateProfile/${currentUser._id}`,
+        `${process.env.REACT_APP_LOCATION_APIKEY}/updateProfile/${currentUser._id}`,
         {
           name: data.name,
           email: data.email,
@@ -107,6 +112,10 @@ const Profile = () => {
               <div className="register-box">
                 <div className="form-group">
                   <img src={logo} alt="Logo" className="register-logo" />
+                </div>
+                <div>
+                    <h3>  Your Location: </h3>
+                    <User/>
                 </div>
 
                 <div className="form-group">

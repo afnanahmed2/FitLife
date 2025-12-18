@@ -81,7 +81,6 @@ const Admin = () => {
                       {u.bookedClasses.map((c, idx) => (
                         <div key={idx} className="class-card-admin">
                           <p><strong>Class:</strong> {c.className}</p>
-                          <p><strong>Date:</strong> {c.date}</p>
                           <p><strong>Time:</strong> {c.time}</p>
                         </div>
                       ))}

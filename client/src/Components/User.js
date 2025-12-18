@@ -4,38 +4,36 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 
 const User = () => {
-  const {user,email} = useSelector(state=> state.users) 
-  const [ip,setIp] = useState(null)
-  const [country,setCountry] = useState(null)
-  const [region,setRegion] = useState(null)
+  const { user } = useSelector((state) => state.users);
+
+  const [ip, setIp] = useState(null);
+  const [country, setCountry] = useState(null);
+  const [region, setRegion] = useState(null);
+
   async function getGeoLocationData() {
-    try{
-      const response = await axios.get(`${process.env.REACT_APP_LOCATION_APIKEY}`)
-      setIp(response.data.ip)
-      setCountry(response.data.location.country)
-      setRegion(response.data.region)
-    }
-    catch(error)
-    {
-      console.log()
+    try {
+      const response = await axios.get(
+        `${process.env.REACT_APP_LOCATION_APIKEY}`
+      );
+      setIp(response.data.ip);
+      setCountry(response.data.location.country);
+      setRegion(response.data.region);
+    } catch (error) {
+      console.error(error);
     }
   }
 
-  useEffect(()=>{
-    getGeoLocationData()
-  },[])
-
+  useEffect(() => {
+    getGeoLocationData();
+  }, []);
 
   return (
     <div>
-      <img src={userimg} className="userImage" alt=""/>
-      <div>
-        <h5>{user?.name}</h5>
-        <h5>{user?.email}</h5>
-        <h5>{ip}</h5>
-        <h5>{country}</h5>
-        <h5>{region}</h5>
-      </div>
+      <h5>{user?.name}</h5>
+      <h5>{user?.email}</h5>
+      <h5>{ip}</h5>
+      <h5>{country}</h5>
+      <h5>{region}</h5>
     </div>
   );
 };

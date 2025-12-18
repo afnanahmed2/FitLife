@@ -1,8 +1,7 @@
 import React from "react";
 import logo from "../images/logo.png";
 import "./styles.css";
-
-
+import {Link} from "react-router-dom";
 function Header() {
   return (
     <header className="main-header">
@@ -15,9 +14,9 @@ function Header() {
       </div>
 
       <div className="header-right">
-        <a href="/Profile">Profile</a>
-        <a href="/Feedback">Feedback</a>
-        <a href="/aboutDevelopers">A Bout Developer</a>
+        <Link to="/Profile">Profile</Link>
+        <Link to="/Feedback">Feedback</Link>
+        <Link to="/aboutDevelopers">A Bout Developer</Link>
       </div>
     </header>
   );
