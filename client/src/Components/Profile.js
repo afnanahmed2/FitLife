@@ -92,7 +92,7 @@ const Profile = () => {
 
   return (
     <Container fluid>
-      {/* Header مثل BookClass */}
+      {/* Header*/}
       <div className="book-header">
         <button className="back-btn" onClick={goHome}>
           <FaArrowLeft size={20} />

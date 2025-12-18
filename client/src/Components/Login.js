@@ -24,11 +24,11 @@ const Login = () => {
   if (actionResult.payload?.user) {
     const user = actionResult.payload.user;
 
-    // تخزين بيانات المستخدم
+    // Store the user Data
     localStorage.setItem("userId", user._id);
     localStorage.setItem("user", JSON.stringify(user));
 
-    // تحقق هل المستخدم Admin
+    // check if the user is Admin
     if (user.email === "admin@gmail.com") {
       navigate("/admin");
     } else {
@@ -55,6 +55,7 @@ const Login = () => {
                   placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  data-testid="email-input"
                 />
               </div>
 
@@ -65,6 +66,7 @@ const Login = () => {
                   placeholder="Enter your password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                   data-testid="password-input"
                 />
               </div>
 

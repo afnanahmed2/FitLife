@@ -47,7 +47,7 @@ function CaloriesCalculator() {
 
   return (
     <div className="book-container">
-      {/* الهيدر */}
+      {/* Header */}
       <div className="book-header">
         <button className="back-btn" onClick={goHome}>
           <FaArrowLeft size={20} />
@@ -55,7 +55,7 @@ function CaloriesCalculator() {
         <h1 className="header-title">Calories Calculator</h1>
       </div>
 
-      {/* محتوى الفورم في الوسط */}
+      {/* content of the form*/}
       <div
         className="book-page"
         style={{

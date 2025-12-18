@@ -15,7 +15,7 @@ body {
 .login-page {
   width: 100%;
   height: 100vh;
-  background-color: #01767f; /* الأخضر السفلي */
+  background-color: #01767f; 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -53,7 +53,7 @@ body {
   text-align: center;
 }
 
-/* حقول الإدخال */
+/* Enter Fields*/
 .input-box {
   width: 100%;
   background: #eee7f0;
@@ -72,7 +72,7 @@ body {
   font-size: 15px;
 }
 
-/* زر تسجيل الدخول */
+/* Login Botton*/
 .login-btn {
   width: 150px;
   padding: 11px 0;
@@ -86,7 +86,7 @@ body {
   margin-top: 10px;
 }
 
-/* نص أسفل الزر */
+/* text*/
 .register-text {
   margin-top: 12px;
   font-size: 14px;
@@ -228,11 +228,11 @@ body {
 
 
 /* ====== Gender Radio Buttons ====== */
-/* صندوق الجنس */
+/* Gender Box*/
 .gender-box {
   width: 100%;
   margin-bottom: 15px;
-  text-align: center; /* لتوسيط كل المحتوى */
+  text-align: center; 
 }
 
 .gender-title {
@@ -243,15 +243,15 @@ body {
   color: #01767f;
 }
 
-/* خيارات الجنس */
+/* Gender choose*/
 .gender-options {
   display: flex;
-  justify-content: center; /* توسيط العناصر */
-  gap: 25px; /* المسافة بين Male و Female */
+  justify-content: center; 
+  gap: 25px; /* space between Male Female */
   color: #01767f;
 }
 
-/* الشكل العام لكل خيار */
+/* Output look*/
 .gender-item {
   display: flex;
   align-items: center;
@@ -260,7 +260,7 @@ body {
   cursor: pointer;
 }
 
-/* تكبير حجم الدائرة */
+/* increase the size of the circul*/
 .gender-item input[type="radio"] {
   width: 18px;
   height: 18px;
@@ -477,7 +477,7 @@ margin-top: 5px;
 
 /* MyClasses */
 .classes-container {
-  background-color: #007f88; /* نفس اللون الأخضر */
+  background-color: #007f88;
   min-height: 100vh;
   padding: 20px 40px;
   color: white;
@@ -614,7 +614,7 @@ margin-top: 5px;
   padding: 40px;
 }
 
-/* العنوان */
+/* Title */
 .book-title {
   display: flex;
   align-items: center;
@@ -632,7 +632,7 @@ margin-top: 5px;
   font-size: 32px;
 }
 
-/* شبكة الكلاسات */
+/* Grid*/
 .book-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -640,8 +640,8 @@ margin-top: 5px;
 }
 
 .class-card {
-  width: 90%; /* زيادة العرض */
-  max-width: 800px; /* أقصى عرض */
+  width: 90%; /* increase the width*/
+  max-width: 800px; /* Maximum Width */
   background: #d9e7e7;
   margin: 20px auto;
   padding: 15px 20px;
@@ -663,7 +663,7 @@ margin-top: 5px;
   display: flex;
   flex-direction: column;
   gap: 5px;
-  flex: 1; /* ليأخذ مساحة متاحة */
+  flex: 1; /* Space*/
 }
 
 .class-info strong {
@@ -676,7 +676,7 @@ margin-top: 5px;
   margin-top: 2px;
 }
 
-/* السعر والوقت */
+/* Price & time*/
 .class-side {
   display: flex;
   flex-direction: column;
@@ -695,7 +695,7 @@ margin-top: 5px;
   color: #444;
 }
 
-/* زر الحجز */
+/* Booking botton*/
 .class-action {
   margin-left: auto;
 }
@@ -738,7 +738,7 @@ margin-top: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative; /* عشان نقدر نضع زر الرجوع على اليسار */
+  position: relative; /* TO can make the return navigate arrow*/
   background-color: #f5f5f5;
   padding: 10px 20px;
   border-bottom: 1px solid #ddd;
@@ -763,8 +763,8 @@ margin-top: 5px;
   
 .color {
   background-color: #01767f;
-  min-height: 100vh; /* لتغطية كامل الصفحة */
-  padding: 20px;     /* حواف داخلية */
+  min-height: 100vh; /* To cover all the page color*/
+  padding: 20px;     /* inside Border*/
 }
 
 .profile-page {
@@ -993,7 +993,7 @@ margin-top: 5px;
 }
 
 
-/* نفس لون My Profile */
+
 .page-header {
   display: flex;
   align-items: center;
@@ -1015,5 +1015,5 @@ margin-top: 5px;
 .page-title {
   font-size: 18px;
   font-weight: 600;
-  color: #007b8f; /* نفس لون My Profile */
+  color: #007b8f; 
 }

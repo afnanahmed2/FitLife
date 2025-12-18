@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const FeedbackSchema = new mongoose.Schema({
   userId: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
-  rating: { type: String, required: true }, // <-- هنا غيرنا النوع من Number إلى String
+  rating: { type: String, required: true }, 
   description: { type: String, required: true },
 }, { timestamps: true });
 

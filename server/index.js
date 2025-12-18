@@ -46,7 +46,7 @@ app.post("/login", async (req, res) => {
 
     res.json({
       msg: "Login success",
-      user: user, // مهم جدًا الاسم يكون "user"
+      user: user, // "user"
     });
   } catch (err) {
     console.error(err);
@@ -93,10 +93,10 @@ app.get("/getBookedClasses/:userId", async (req, res) => {
       bookedClasses: user.bookedClasses, 
       bookedMembership: user.membership ? {
         title: user.membership,
-        image: `${user.membership.toLowerCase()}.jpg`, // أو أي اسم ملف عندك
-        coachName: "N/A", // إذا عندك بيانات Coach لكل عضوية ممكن تضيفي
-        price: "$100",      // حسب نوع العضوية
-        duration: "1 Month" // مثال
+        image: `${user.membership.toLowerCase()}.jpg`,
+        coachName: "N/A", 
+        price: "$100",     
+        duration: "1 Month"
       } : null
     });
   } catch (error) {
@@ -169,7 +169,7 @@ app.post("/bookMembership", async (req, res) => {
   const user = await UserModel.findById(userId);
   if (!user) return res.status(404).send({ msg: "User not found" });
 
-  user.membership = membershipType; // تأكد أن هذا الاسم مطابق لاسم الصورة
+  user.membership = membershipType; 
   await user.save();
 
   res.status(200).send({ user, msg: "Membership booked successfully" });
@@ -184,7 +184,7 @@ app.post("/submitFeedback", async (req, res) => {
       return res.status(400).send({ msg: "All fields are required" });
     }
 
-    // Optional: تحقق من وجود المستخدم
+    // Optional: check for existing users
     const user = await UserModel.findById(userId);
     if (!user) return res.status(404).send({ msg: "User not found" });
 
@@ -193,7 +193,7 @@ app.post("/submitFeedback", async (req, res) => {
 
     res.status(200).send({ feedback, msg: "Feedback submitted successfully" });
   } catch (error) {
-    console.error(error); // هذا مهم لطباعة الخطأ في console
+    console.error(error); // for consol error
     res.status(500).send({ msg: "Server error while submitting feedback" });
   }
 });
@@ -202,21 +202,20 @@ app.post("/submitFeedback", async (req, res) => {
 // Get all feedbacks
 app.get("/getAllFeedback", async (req, res) => {
   try {
-    const feedbacks = await FeedbackModel.find()
-      .populate("userId", "name email"); // نجيب اسم وإيميل المستخدم
-
+    const feedbacks = await FeedbackModel.find();
     res.status(200).send({ feedbacks });
   } catch (error) {
-    console.log(error);
+    console.log("Feedback error:", error);
     res.status(500).send({ msg: "Server error while fetching feedbacks" });
   }
 });
 
 
+
 // Get all booked classes for all users
 app.get("/getAllUsersBookedClasses", async (req, res) => {
   try {
-    const users = await UserModel.find({}, "name bookedClasses"); // فقط الاسم والكلاسات
+    const users = await UserModel.find({}, "name bookedClasses"); // Only name & class
     res.status(200).send({ users });
   } catch (error) {
     console.log(error);

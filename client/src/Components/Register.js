@@ -55,10 +55,10 @@ const Register = () => {
  
       <div className="register-box">
         <div className="form-group">
-        <img src={logo} alt="FitLife Logo" className="register-logo" /></div>
+        <img src={logo} alt="FitLifeLogo" className="register-logo" /></div>
 
         <h2 className="register-title">Create Account</h2>
-
+        {/* Name*/}
         <div className="form-group">
         <input
         type="text" 
@@ -70,7 +70,7 @@ const Register = () => {
                   })}/>
         <p className="error">{errors.name?.message}</p>  
         </div>
-
+       {/* Email*/}
         <div className="form-group">
         <input 
         type="email"
@@ -83,7 +83,7 @@ const Register = () => {
          />
         <p className="error">{errors.email?.message}</p> 
          </div>
-
+        {/*Phone Number */}
         <div className="form-group">
         <input
          type="text" 
@@ -97,7 +97,7 @@ const Register = () => {
          <p className="error">{errors.phoneNum?.message}</p> 
          </div> 
 
-              {/* العمر يكتب يدويًا فقط */}
+              {/*Age */}
       <div className="form-group">
         <input
           type="text" 
@@ -113,7 +113,7 @@ const Register = () => {
       </div>
 
 
-        {/* اختيار الجنس مركزي */}
+        {/* gender*/}
         <div className="gender-box" style={{ textAlign: 'center' }}>
           <label className="gender-title">Gender:</label>
           <div className="form-group" style={{ display: 'inline-block', margin: '0 10px' }}>
@@ -143,6 +143,7 @@ const Register = () => {
           <p className="error">{errors.gender?.message}</p>
         </div>
 
+  {/* Password*/}
         <div className="form-group">
         <input 
         type="password" 

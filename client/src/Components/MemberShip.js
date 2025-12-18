@@ -26,7 +26,7 @@ const MemberShip = () => {
     }
 
     try {
-      // حجز العضوية في السيرفر
+      // book membership
       const res = await axios.post(
         `${process.env.REACT_APP_SERVER_URL}/bookMembership`,
         {
@@ -37,7 +37,7 @@ const MemberShip = () => {
 
       alert(res.data.msg);
 
-      // تحديث العضوية في Redux فورًا
+      // update the membership
       dispatch(
         setMembership({
           title: plan.title,
@@ -47,8 +47,7 @@ const MemberShip = () => {
           duration: plan.duration,
         })
       );
-
-      // تحديث الكلاسات من السيرفر للتأكد من تزامن البيانات
+      //Update the class on the server
       const classesRes = await axios.get(
         `${process.env.REACT_APP_SERVER_URL}/getBookedClasses/${user._id}`
       );

@@ -30,8 +30,7 @@ function BookClass() {
           classData: cls,
         }
       );
-
-      // تحديث الكلاسات في Redux بعد الحجز مباشرة
+     // After booking the class will be directly updated
       dispatch(setClasses(response.data.bookedClasses || []));
       alert(response.data.msg);
     } catch (error) {

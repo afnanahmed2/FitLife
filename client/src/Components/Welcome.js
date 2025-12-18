@@ -9,7 +9,7 @@ function Welcome() {
     <div className="welcome-container">
 
       <div className="welcome-card">
-        <img src={logo} alt="FitLife Logo" className="logo" />
+        <img src={logo} alt="FitLifeLogo" className="logo" />
 
         <h2 className="title">
           Welcome to <br /> FitLife Gym!

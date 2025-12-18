@@ -11,12 +11,12 @@ const MyClasses = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  // المستخدم من Redux أو localStorage
+  // Bring user from Redux OR localStorage
   const userRedux = useSelector((state) => state.users.user);
   const userLocal = JSON.parse(localStorage.getItem("user"));
   const user = userRedux || userLocal;
 
-  // الكلاسات والعضوية من Redux
+  // get the class & membership from Redux
   const bookedClasses = useSelector((state) => state.bookedClasses.classes);
   const membership = useSelector((state) => state.bookedClasses.membership);
 
@@ -32,11 +32,11 @@ const MyClasses = () => {
       if (response.status === 200) {
         dispatch(setClasses(response.data.bookedClasses || []));
       } else {
-        alert("لم يتم الحذف بنجاح");
+        alert("Not Deleted");
       }
     } catch (err) {
       console.error(err);
-      alert("حدث خطأ أثناء الحذف");
+      alert("Something get Wrong while deleting");
     }
   };
 

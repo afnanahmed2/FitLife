@@ -5,7 +5,7 @@ const bookedClassesSlice = createSlice({
   name: "bookedClasses",
   initialState: {
     classes: [],
-    membership: null, // لتخزين العضوية
+    membership: null, // Store Membership
   },
   reducers: {
     addClass: (state, action) => {

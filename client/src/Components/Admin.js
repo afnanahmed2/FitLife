@@ -15,9 +15,12 @@ const Admin = () => {
     // Fetch feedbacks
     fetch(`${process.env.REACT_APP_SERVER_URL}/getAllFeedback`)
       .then(res => res.json())
-      .then(data => setFeedbacks(data.feedbacks || []))
+      .then(data => {
+        console.log("Feedback data from server:", data);
+        setFeedbacks(data.feedbacks || []);
+      })
       .catch(err => {
-        console.error(err);
+        console.error("Feedback fetch error:", err);
         setFeedbacks([]);
       })
       .finally(() => setLoadingFeedback(false));
@@ -27,7 +30,7 @@ const Admin = () => {
       .then(res => res.json())
       .then(data => setBookedClasses(data.users || []))
       .catch(err => {
-        console.error(err);
+        console.error("Booked classes fetch error:", err);
         setBookedClasses([]);
       })
       .finally(() => setLoadingClasses(false));
@@ -49,7 +52,9 @@ const Admin = () => {
             <div className="feedback-cards">
               {feedbacks.map(fb => (
                 <div key={fb._id} className="feedback-card-admin">
-                  <p><strong>User:</strong> {fb.userId?.name || "Unknown"}</p>
+                <p>
+                   <strong>User ID:</strong> {fb.userId}
+                </p>
                   <p><strong>Rating:</strong> {fb.rating}</p>
                   <p><strong>Description:</strong> {fb.description}</p>
                   <p className="feedback-date">{new Date(fb.createdAt).toLocaleString()}</p>
@@ -57,7 +62,7 @@ const Admin = () => {
               ))}
             </div>
           ) : (
-            <p>No feedback available.</p>
+            <p style={{ color: "red" }}>No feedback available</p>
           )}
         </div>
 

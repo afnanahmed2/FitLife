@@ -36,7 +36,7 @@ const AboutDevelopers = () => {
 
   return (
     <Container fluid style={{ backgroundColor: "#007f88", minHeight: "100vh", paddingBottom: "50px" }}>
-      {/* سهم الرجوع */}
+      {/* navigation*/}
       <div
         className="back-arrow"
         style={{
